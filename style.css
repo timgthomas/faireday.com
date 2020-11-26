@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --accent: #8256b8;
+  --foreground: #fff;
+
+  font-size: 62.5%;
+  height: 100vh;
+}
+
+body {
+  align-items: center;
+  background-color: var(--accent);
+  color: var(--foreground);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+body * + * {
+  margin-top: 4.8rem;
+}
+
+h1 {
+  background-image: url('/logo.png');
+  background-size: cover;
+  display: block;
+  font: 0 / 0 a;
+  height: 12.8rem;
+  width: 12.8rem;
+}
+
+.app-store {
+  background-image: url('/app-store.svg');
+  background-size: cover;
+  display: block;
+  font: 0 / 0 a;
+  height: 4.0rem;
+  width: 12.0rem;
+}
