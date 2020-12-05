@@ -8,7 +8,7 @@
   --foreground: #fff;
 
   font-size: 62.5%;
-  height: 100vh;
+  height: 100%;
 }
 
 body {
@@ -16,8 +16,8 @@ body {
   background-color: var(--accent);
   color: var(--foreground);
   display: flex;
+  height: 100%;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
 }
 
