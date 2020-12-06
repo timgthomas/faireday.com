@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -16,8 +17,12 @@ body {
   background-color: var(--accent);
   color: var(--foreground);
   display: flex;
-  height: 100%;
   flex-direction: column;
+  min-height: 100%;
+  padding: 2.4rem;
+}
+
+body.home {
   justify-content: center;
 }
 
@@ -34,7 +39,43 @@ h1 {
   width: 12.8rem;
 }
 
-a {
+body:not(.home) h1 {
+  height: 3.2rem;
+  opacity: 0.35;
+  width: 3.2rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  letter-spacing: 0.25ch;
+  opacity: 0.65;
+  text-transform: uppercase;
+}
+
+main {
+  font: 1.6rem / 1.3 'Alegreya', serif;
+  max-width: 32.0rem;
+}
+
+main * + * {
+  margin-top: 1.2rem;
+}
+
+main a {
+  color: currentColor;
+  opacity: 0.65;
+}
+
+strong {
+  font-weight: 700;
+}
+
+ul {
+  margin-left: 2.4rem;
+}
+
+body > a,
+body > .social a {
   display: block;
   font: 0 / 0 a;
 }
@@ -44,6 +85,27 @@ a {
   background-size: cover;
   height: 4.0rem;
   width: 12.0rem;
+}
+
+.datestamp {
+  font-size: 1.2rem;
+  opacity: 0.65;
+}
+
+/* Navigation */
+
+nav {
+  display: flex;
+  opacity: 0.65;
+}
+
+nav > * + * {
+  margin-left: 1.2rem;
+}
+
+nav a {
+  color: currentColor;
+  font: 1.6rem / 1 'Alegreya', serif;
 }
 
 /* Social Links */
