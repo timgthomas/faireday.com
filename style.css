@@ -128,6 +128,10 @@ nav a {
   width: 4.4rem;
 }
 
+.social .discord {
+  background-image: url('/social-discord.png');
+}
+
 .social .facebook {
   background-image: url('/social-facebook.png');
 }
