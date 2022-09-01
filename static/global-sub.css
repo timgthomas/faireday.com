@@ -22,10 +22,6 @@ body {
   padding: 2.4rem;
 }
 
-body.home {
-  justify-content: center;
-}
-
 body > * + * {
   margin-top: 4.8rem;
 }
@@ -39,7 +35,7 @@ h1 {
   width: 12.8rem;
 }
 
-body:not(.home) h1 {
+body h1 {
   height: 3.2rem;
   opacity: 0.35;
   width: 3.2rem;
