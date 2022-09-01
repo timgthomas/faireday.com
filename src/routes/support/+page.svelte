@@ -2,11 +2,6 @@
   import Social from '$lib/components/social.svelte'
 </script>
 
-<svelte:head>
-  <link rel="stylesheet" href="/static.css">
-  <title>Faire Day &middot; Faire and Festival Weather</title>
-</svelte:head>
-
 <h1 class="sub">Faire Day</h1>
 <main>
   <p><a href="/">&lsaquo; Home</a></p>

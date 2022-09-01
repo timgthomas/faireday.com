@@ -3,8 +3,6 @@
 </script>
 
 <svelte:head>
-  <link rel="stylesheet" href="/static.css">
-  <title>Faire Day &middot; Faire and Festival Weather</title>
   <style>
     body {
       justify-content: center;
