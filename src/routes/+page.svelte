@@ -1,25 +1,20 @@
+<script>
+  import Social from '$lib/components/social.svelte'
+</script>
+
 <svelte:head>
-  <link rel="stylesheet" href="/global-home.css">
+  <link rel="stylesheet" href="/static.css">
   <title>Faire Day &middot; Faire and Festival Weather</title>
+  <style>
+    body {
+      justify-content: center;
+    }
+  </style>
 </svelte:head>
 
 <h1>Faire Day</h1>
-<a class="app-store" href="https://apple.co/3fDEqho">Download on the App Store</a>
 <nav>
   <a href="/support">Support</a>
   <a href="/privacy">Privacy</a>
 </nav>
-<div class="social">
-  <a class="patreon" href="https://www.patreon.com/faireday" target="_blank" rel="noopener noreferrer">
-    Support Faire Day on Patreon
-  </a>
-  <a class="facebook" href="https://fb.me/faireday" target="_blank" rel="noopener noreferrer">
-    Like Faire Day on Facebook
-  </a>
-  <a class="twitter" href="https://twitter.com/faireday" target="_blank" rel="noopener noreferrer">
-    Follow Faire Day on Twitter
-  </a>
-  <a class="discord" href="https://discord.gg/zNWpHHGnhw" target="_blank" rel="noopener noreferrer">
-    Join the Faire Day server on Discord
-  </a>
-</div>
+<Social />
