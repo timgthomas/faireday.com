@@ -27,7 +27,7 @@
         <p>H: {formatTemperature(day.temperatureMax)}</p>
         <p>L: {formatTemperature(day.temperatureMin)}</p>
         <dl>
-          <DayPart class="foo" title="Day" model={day.daytimeForecast} />
+          <DayPart title="Day" model={day.daytimeForecast} />
           <DayPart title="Night" model={day.overnightForecast} />
         </dl>
       </li>
@@ -41,7 +41,7 @@
   }
 
   dl :global(> div:first-of-type) {
-    border-right: 0.5px solid deeppink;
+    border-right: 0.5px solid var(--foreground-tertiary);
   }
   
   ol, li {

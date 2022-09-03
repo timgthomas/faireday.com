@@ -1,6 +1,12 @@
 <script>
+  import Attribute from './attribute.svelte'
+
   export let title
   export let model
+  
+  function formatPercentage(decimal) {
+    return `${Math.round(decimal * 100)}%`
+  }
 </script>
 
 <div>
@@ -8,12 +14,11 @@
   <dd>
     {model.conditionCode}
     <dl>
-      <dt>Humidity</dt>
-      <dd>{model.humidity}</dd>
-      <dt>Rain Chance</dt>
-      <dd>{model.precipitationChance}</dd>
-      <dt>Wind</dt>
-      <dd>{model.windDirection} {model.windSpeed}</dd>
+      <Attribute label="Humidity" value={formatPercentage(model.humidity)} />
+      <Attribute label="Rain Chance" value={formatPercentage(model.precipitationChance)} />
+      <Attribute label="Wind">
+        {model.windDirection} {model.windSpeed}
+      </Attribute>
     </dl>
   </dd>
 </div>
@@ -21,5 +26,10 @@
 <style>
   div {
     padding: 1rem 2rem;
+  }
+  
+  dl {
+    display: grid;
+    grid-gap: 1rem;
   }
 </style>

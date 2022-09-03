@@ -8,9 +8,13 @@
   --accent: #8256b8;
   --background: #333;
   --foreground: #fff;
+  --foreground-secondary: #999;
+  --foreground-tertiary: #464646;
 
   font-size: 62.5%;
   height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
