@@ -1,6 +1,6 @@
 <script>
   export let label
-  export let value
+  export let value = null
 </script>
 
 <div>

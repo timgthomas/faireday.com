@@ -27,8 +27,8 @@
         <p>H: {formatTemperature(day.temperatureMax)}</p>
         <p>L: {formatTemperature(day.temperatureMin)}</p>
         <dl>
-          <DayPart title="Day" model={day.daytimeForecast} />
-          <DayPart title="Night" model={day.overnightForecast} />
+          <DayPart title="Day" isDay={true} model={day.daytimeForecast} />
+          <DayPart title="Night" isDay={false} model={day.overnightForecast} />
         </dl>
       </li>
     {/each}
