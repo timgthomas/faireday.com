@@ -1,30 +1,38 @@
 <script>
   import { DateTime } from 'luxon'
   import Banner from '$lib/components/banner.svelte'
+  import Icon from '$lib/components/icon.svelte'
+  import formatTemperature from '$lib/utils/format-temperature'
   import Attribute from './attribute.svelte'
   import DayPart from './day-part.svelte'
+  import DayTile from './day-tile.svelte'
 
   export let data
   
-  function formatDayOfTheWeek(isoDateTime) {
+  function formatDayOfTheWeek(isoDateTime, format) {
     return DateTime
       .fromISO(isoDateTime)
       .setZone('America/Chicago')
       .plus({ days: 1 }) // HACK: Fix on API side
-      .toFormat('cccc')
-  }
-  
-  function formatTemperature(tempInC) {
-    const tempInF = tempInC * 1.8 + 32
-    return `${Math.round(tempInF)}°`
+      .toFormat(format)
   }
 </script>
 
 <main>
-  <ol>
+  <section>
+    <Banner title="Weekend" />
+    <ol class="weekend">
+      {#each data.weather.forecastDaily.days as day}
+        <li>
+          <DayTile title={formatDayOfTheWeek(day.forecastStart, 'ccc')} model={day} />
+        </li>
+      {/each}
+    </ol>
+  </section>
+  <ol class="daily">
     {#each data.weather.forecastDaily.days as day}
       <li>
-        <Banner title={formatDayOfTheWeek(day.forecastStart)} />
+        <Banner title={formatDayOfTheWeek(day.forecastStart, 'cccc')} />
         <dl>
           <DayPart title="Day" isDay={true} model={day.daytimeForecast}>
             <Attribute label="High" value={formatTemperature(day.temperatureMax)} slot="attributes" />
@@ -39,18 +47,36 @@
 </main>
 
 <style>
+  li,
+  main,
+  .daily {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .weekend {
+    display: flex;
+    justify-content: center;
+  }
+  
+    .weekend li {
+      padding: 1rem 1.5rem;
+    }
+    
+    .weekend li:not(:last-of-type) {
+      border-right: 0.5px solid var(--foreground-tertiary);
+    }
+
+  .daily li {
+    width: 100%;
+  }
+
   dl {
     display: flex;
   }
 
   dl :global(> div:first-of-type) {
     border-right: 0.5px solid var(--foreground-tertiary);
-  }
-  
-  ol, li {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
   }
 </style>
