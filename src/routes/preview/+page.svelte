@@ -1,6 +1,7 @@
 <script>
   import { DateTime } from 'luxon'
   import Banner from '$lib/components/banner.svelte'
+  import Attribute from './attribute.svelte'
   import DayPart from './day-part.svelte'
 
   export let data
@@ -24,11 +25,13 @@
     {#each data.weather.forecastDaily.days as day}
       <li>
         <Banner title={formatDayOfTheWeek(day.forecastStart)} />
-        <p>H: {formatTemperature(day.temperatureMax)}</p>
-        <p>L: {formatTemperature(day.temperatureMin)}</p>
         <dl>
-          <DayPart title="Day" isDay={true} model={day.daytimeForecast} />
-          <DayPart title="Night" isDay={false} model={day.overnightForecast} />
+          <DayPart title="Day" isDay={true} model={day.daytimeForecast}>
+            <Attribute label="High" value={formatTemperature(day.temperatureMax)} slot="attributes" />
+          </DayPart>
+          <DayPart title="Night" isDay={false} model={day.overnightForecast}>
+            <Attribute label="Low" value={formatTemperature(day.temperatureMin)} slot="attributes" />
+          </DayPart>
         </dl>
       </li>
     {/each}

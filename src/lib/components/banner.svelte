@@ -15,10 +15,10 @@
     height: 3rem;
     justify-content: center;
     letter-spacing: 0.35em;
-    margin: 2rem auto;
+    margin: 2rem auto 1rem;
     position: relative;
     text-transform: uppercase;
-    width: 30rem;
+    width: 25rem;
   }
   
   h1::before,

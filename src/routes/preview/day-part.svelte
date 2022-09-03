@@ -1,13 +1,14 @@
 <script>
-  import Attribute from './attribute.svelte'
-  import Icon from './icon.svelte'
+  import Icon from '$lib/components/icon.svelte'
   import humanizeConditionCode from '$lib/utils/humanize-condition-code'
+  import Attribute from './attribute.svelte'
 
   export let title
   export let model
   export let isDay = false
   
   $: condition = humanizeConditionCode(model.conditionCode, isDay)
+  $: wind = `${Math.round(model.windSpeed)}mph`
   
   function formatPercentage(decimal) {
     return `${Math.round(decimal * 100)}%`
@@ -19,11 +20,10 @@
   <dd>
     <Icon icon={condition.icon} group="weather" />
     <dl>
+      <slot name="attributes"></slot>
       <Attribute label="Humidity" value={formatPercentage(model.humidity)} />
       <Attribute label="Rain Chance" value={formatPercentage(model.precipitationChance)} />
-      <Attribute label="Wind">
-        {model.windDirection} {model.windSpeed}
-      </Attribute>
+      <Attribute label="Wind" value={wind} />
     </dl>
   </dd>
 </div>
@@ -51,6 +51,8 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    font-family: 'Alegreya SC';
+    gap: 0.5rem;
+    text-transform: lowercase;
   }
 </style>
