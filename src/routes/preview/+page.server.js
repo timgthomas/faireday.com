@@ -7,5 +7,5 @@ export async function load() {
   const url = `${baseUrl}/faires/${faire}/weather?weekendId=${weekend}`
   const weatherRequest = await fetch(url)
   const weather = await weatherRequest.json()
-  return { weather }
+  return { ...weather }
 }
