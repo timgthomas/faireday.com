@@ -19,6 +19,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Faire Day &middot; Sherwood Celtic Music Festival</title>
+</svelte:head>
+
 <Title title="Sherwood Celtic Music Festival" />
 <main>
   <section>
