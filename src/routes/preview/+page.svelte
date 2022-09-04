@@ -47,6 +47,10 @@
     {/each}
   </ol>
 </main>
+<footer>
+  <a class="app-store" href="https://apple.co/3fDEqho">Download on the App Store</a>
+  <a class="apple-weather" href={data.weather.forecastDaily.metadata.attributionURL} target="_blank" rel="noopener noreferrer">Powered by</a>
+</footer>
 
 <style>
   li,
@@ -80,5 +84,36 @@
 
   dl :global(> div:first-of-type) {
     border-right: 0.5px solid var(--foreground-tertiary);
+  }
+  
+  footer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .apple-weather {
+    background: bottom center / 6rem 1.1rem no-repeat url('/apple-weather.png');
+    color: inherit;
+    display: inline-block;
+    font-family: 'Alegreya SC';
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.5;
+    padding-bottom: 1.3rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  
+  .app-store {
+    background-image: url('/app-store.svg');
+    background-size: cover;
+    font: 0 / 0 a;
+    height: 4.0rem;
+    width: 12.0rem;
   }
 </style>
