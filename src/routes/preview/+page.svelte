@@ -5,6 +5,7 @@
   import Title from '$lib/components/title.svelte'
   import formatTemperature from '$lib/utils/format-temperature'
   import Attribute from './attribute.svelte'
+  import Attribution from './attribution.svelte'
   import DayPart from './day-part.svelte'
   import DayTile from './day-tile.svelte'
 
@@ -57,7 +58,7 @@
 </main>
 <footer>
   <a class="app-store" href="https://apple.co/3fDEqho">Download on the App Store</a>
-  <a class="apple-weather" href={data.weather.forecastDaily.metadata.attributionURL} target="_blank" rel="noopener noreferrer">Powered by</a>
+  <Attribution url={data.weather.forecastDaily.metadata.attributionURL} />
 </footer>
 
 <style>
@@ -99,7 +100,7 @@
     border-bottom: 0.5px solid var(--foreground-tertiary);
     font-size: 1.6rem;
     margin-bottom: -4rem;
-    padding-bottom: 21rem;
+    padding-bottom: 22rem;
     text-align: center;
     width: 25rem;
   }
@@ -111,20 +112,6 @@
     justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
-  }
-  
-  .apple-weather {
-    background: bottom center / 6rem 1.1rem no-repeat url('/apple-weather.png');
-    color: inherit;
-    display: inline-block;
-    font-family: 'Alegreya SC';
-    font-size: 1.2rem;
-    font-weight: 500;
-    opacity: 0.5;
-    padding-bottom: 1.3rem;
-    text-align: center;
-    text-decoration: none;
-    text-transform: lowercase;
   }
   
   .app-store {
