@@ -12,8 +12,9 @@
 
 <style>
   i {
-    background-image: var(--path);
-    background-size: contain;
+    background: currentColor;
+    mask-image: var(--path);
+    mask-size: contain;
     display: block;
     height: 4rem;
     width: 4rem;

@@ -8,6 +8,7 @@
   h1 {
     align-items: center;
     background: var(--accent);
+    color: #fff;
     display: inline-flex;
     filter: drop-shadow(0 0.4rem 0 rgba(0, 0, 0, 0.15));
     font-size: 1.6rem;

@@ -13,6 +13,7 @@
   nav {
     align-items: center;
     background: var(--accent);
+    color: #fff;
     display: flex;
     flex-direction: column;
     height: 6rem;

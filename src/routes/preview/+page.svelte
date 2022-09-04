@@ -13,8 +13,7 @@
   function formatDayOfTheWeek(isoDateTime, format) {
     return DateTime
       .fromISO(isoDateTime)
-      .setZone('America/Chicago')
-      .plus({ days: 1 }) // HACK: Fix on API side
+      .setZone('America/Chicago') // TODO: Pull from faire
       .toFormat(format)
   }
 </script>
