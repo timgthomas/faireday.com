@@ -2,6 +2,7 @@
   import { DateTime } from 'luxon'
   import Banner from '$lib/components/banner.svelte'
   import Icon from '$lib/components/icon.svelte'
+  import Title from '$lib/components/title.svelte'
   import formatTemperature from '$lib/utils/format-temperature'
   import Attribute from './attribute.svelte'
   import DayPart from './day-part.svelte'
@@ -18,6 +19,7 @@
   }
 </script>
 
+<Title title="Sherwood Celtic Music Festival" />
 <main>
   <section>
     <Banner title="Weekend" />
