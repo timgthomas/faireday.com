@@ -46,6 +46,10 @@
       </li>
     {/each}
   </ol>
+  <section>
+    <Banner title="Faire Day" />
+    <p>Whether you're planning out a season's worth of garb or just deciding whether to wear that extra coin belt on the day, Faire Day is your source for updated weather conditions and details of your favorite festivals!</p>
+  </section>
 </main>
 <footer>
   <a class="app-store" href="https://apple.co/3fDEqho">Download on the App Store</a>
@@ -84,6 +88,16 @@
 
   dl :global(> div:first-of-type) {
     border-right: 0.5px solid var(--foreground-tertiary);
+  }
+  
+  p {
+    background: bottom center / 20rem 20rem no-repeat url('/app.png');
+    border-bottom: 0.5px solid var(--foreground-tertiary);
+    font-size: 1.6rem;
+    margin-bottom: -4rem;
+    padding-bottom: 21rem;
+    text-align: center;
+    width: 25rem;
   }
   
   footer {
