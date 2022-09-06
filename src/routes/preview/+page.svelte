@@ -20,6 +20,7 @@
 </script>
 
 <svelte:head>
+  <meta property="og:title" content="Faire Day &middot; Sherwood Celtic Music Festival">
   <title>Faire Day &middot; Sherwood Celtic Music Festival</title>
   <script defer data-domain="faireday.com" src="https://plausible.io/js/plausible.js"></script>
 </svelte:head>
