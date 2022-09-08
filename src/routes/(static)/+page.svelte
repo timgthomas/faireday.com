@@ -3,6 +3,7 @@
 </script>
 
 <svelte:head>
+  <script defer data-domain="faireday.com" src="https://plausible.io/js/plausible.js"></script>
   <style>
     body {
       justify-content: center;
