@@ -54,7 +54,7 @@ const conditionCodeMap = {
   Hurricane: rainyStyle,
   IsolatedThunderstorms: rainyStyle,
   SevereThunderstorm: rainyStyle,
-  Thunderstorm: rainyStyle,
+  Thunderstorms: rainyStyle, // Formerly "Thunderstorm"
   // Tornado: {},
   TropicalStorm: rainyStyle,
 }
