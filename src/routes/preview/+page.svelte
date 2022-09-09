@@ -26,41 +26,45 @@
 </svelte:head>
 
 <Title title="Sherwood Celtic Music Festival" />
-<main>
-  <section>
-    <Banner title="Weekend" />
-    <ol class="weekend">
+{#if data.weather && data.weather.forecastDaily && data.weather.forecastDaily.days}
+  <main>
+    <section>
+      <Banner title="Weekend" />
+      <ol class="weekend">
+        {#each data.weather.forecastDaily.days as day}
+          <li>
+            <DayTile title={formatDayOfTheWeek(day.forecastStart, 'ccc')} model={day} />
+          </li>
+        {/each}
+      </ol>
+    </section>
+    <ol class="daily">
       {#each data.weather.forecastDaily.days as day}
         <li>
-          <DayTile title={formatDayOfTheWeek(day.forecastStart, 'ccc')} model={day} />
+          <Banner title={formatDayOfTheWeek(day.forecastStart, 'cccc')} />
+          <dl>
+            <DayPart title="Day" isDay={true} model={day.daytimeForecast}>
+              <Attribute label="High" value={formatTemperature(day.temperatureMax)} slot="attributes" />
+            </DayPart>
+            <DayPart title="Night" isDay={false} model={day.overnightForecast}>
+              <Attribute label="Low" value={formatTemperature(day.temperatureMin)} slot="attributes" />
+            </DayPart>
+          </dl>
         </li>
       {/each}
     </ol>
-  </section>
-  <ol class="daily">
-    {#each data.weather.forecastDaily.days as day}
-      <li>
-        <Banner title={formatDayOfTheWeek(day.forecastStart, 'cccc')} />
-        <dl>
-          <DayPart title="Day" isDay={true} model={day.daytimeForecast}>
-            <Attribute label="High" value={formatTemperature(day.temperatureMax)} slot="attributes" />
-          </DayPart>
-          <DayPart title="Night" isDay={false} model={day.overnightForecast}>
-            <Attribute label="Low" value={formatTemperature(day.temperatureMin)} slot="attributes" />
-          </DayPart>
-        </dl>
-      </li>
-    {/each}
-  </ol>
-  <section>
-    <Banner title="Faire Day" />
-    <p>Whether you're planning out a season's worth of garb or just deciding whether to wear that extra coin belt on the day, Faire Day is your source for updated weather conditions and details of your favorite festivals!</p>
-  </section>
-</main>
-<footer>
-  <a class="app-store" href="https://apple.co/3fDEqho">Download on the App Store</a>
-  <Attribution url={data.weather.forecastDaily.metadata.attributionURL} />
-</footer>
+    <section>
+      <Banner title="Faire Day" />
+      <p class="hero">Whether you're planning out a season's worth of garb or just deciding whether to wear that extra coin belt on the day, Faire Day is your source for updated weather conditions and details of your favorite festivals!</p>
+    </section>
+  </main>
+  <footer>
+    <a class="app-store" href="https://apple.co/3fDEqho">Download on the App Store</a>
+    <Attribution url={data.weather.forecastDaily.metadata.attributionURL} />
+  </footer>
+{:else}
+  <p class="error">Hmm…something went wrong. We’re looking into it!</p>
+{/if}
 
 <style>
   li,
@@ -96,12 +100,20 @@
     border-right: 0.5px solid var(--foreground-tertiary);
   }
   
-  p {
+  p.hero {
     background: bottom center / 20rem 20rem no-repeat url('/app.png');
     border-bottom: 0.5px solid var(--foreground-tertiary);
     font-size: 1.6rem;
     margin-bottom: -4rem;
     padding-bottom: 22rem;
+    text-align: center;
+    width: 25rem;
+  }
+  
+  p.error {
+    font-size: 1.6rem;
+    margin: 0 auto;
+    padding-top: 2rem;
     text-align: center;
     width: 25rem;
   }
