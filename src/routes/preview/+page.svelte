@@ -11,6 +11,8 @@
 
   export let data
   
+  const isActive = false
+  
   function formatDayOfTheWeek(isoDateTime, format) {
     return DateTime
       .fromISO(isoDateTime)
@@ -25,9 +27,9 @@
   <script defer data-domain="faireday.com" src="https://plausible.io/js/plausible.js"></script>
 </svelte:head>
 
-<Title title="Sherwood Celtic Music Festival" />
-{#if data.weather && data.weather.forecastDaily && data.weather.forecastDaily.days}
-  <main>
+<Title title="Sherwood Celtic Music Festival" isActive={isActive} />
+<main>
+  {#if isActive}
     <section>
       <Banner title="Weekend" />
       <ol class="weekend">
@@ -53,18 +55,21 @@
         </li>
       {/each}
     </ol>
-    <section>
-      <Banner title="Faire Day" />
-      <p class="hero">Whether you're planning out a season's worth of garb or just deciding whether to wear that extra coin belt on the day, Faire Day is your source for updated weather conditions and details of your favorite festivals!</p>
-    </section>
-  </main>
-  <footer>
-    <a class="app-store" href="https://apple.co/3fDEqho">Download on the App Store</a>
+  {:else}
+    <p class="error">We hope you enjoyed the Faire Day preview of the Sherwood Celtic Music Festival!</p>
+    <p class="error">Download Faire Day below to see more faire and festival weather, and check back soon for another event!</p>
+  {/if}
+  <section>
+    <Banner title="Faire Day" />
+    <p class="hero">Whether you're planning out a season's worth of garb or just deciding whether to wear that extra coin belt on the day, Faire Day is your source for updated weather conditions and details of your favorite festivals!</p>
+  </section>
+</main>
+<footer>
+  <a class="app-store" href="https://apple.co/3fDEqho">Download on the App Store</a>
+  {#if data.weather?.forecastDaily.metadata.attributionURL}
     <Attribution url={data.weather.forecastDaily.metadata.attributionURL} />
-  </footer>
-{:else}
-  <p class="error">Hmm…something went wrong. We’re looking into it!</p>
-{/if}
+  {/if}
+</footer>
 
 <style>
   li,
@@ -100,10 +105,13 @@
     border-right: 0.5px solid var(--foreground-tertiary);
   }
   
+  p {
+    font-size: 1.6rem;
+  }
+  
   p.hero {
     background: bottom center / 20rem 20rem no-repeat url('/app.png');
     border-bottom: 0.5px solid var(--foreground-tertiary);
-    font-size: 1.6rem;
     margin-bottom: -4rem;
     padding-bottom: 22rem;
     text-align: center;
@@ -111,12 +119,19 @@
   }
   
   p.error {
-    font-size: 1.6rem;
     margin: 0 auto;
     padding-top: 2rem;
     text-align: center;
     width: 25rem;
   }
+  
+    p.error:first-of-type {
+      margin-top: 5rem;
+    }
+  
+    p.error:last-of-type {
+      margin-bottom: 5rem;
+    }
   
   footer {
     align-items: center;

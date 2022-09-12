@@ -1,11 +1,16 @@
 <script>
   export let title
+  export let isActive
 </script>
 
 <nav role="banner">
   <h1>
-    <span class="subtitle">Faire Day weather presents</span>
-    <span class="title">{title}</span>
+    {#if isActive}
+      <span class="subtitle">Faire Day weather presents</span>
+      <span class="title">{title}</span>
+    {:else}
+      <span class="title">Faire Day</span>
+    {/if}
   </h1>
 </nav>
 
