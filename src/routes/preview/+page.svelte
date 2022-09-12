@@ -22,8 +22,13 @@
 </script>
 
 <svelte:head>
-  <meta property="og:title" content="Faire Day &middot; Sherwood Celtic Music Festival">
-  <title>Faire Day &middot; Sherwood Celtic Music Festival</title>
+  {#if isActive}
+    <meta property="og:title" content="Faire Day &middot; Sherwood Celtic Music Festival">
+    <title>Faire Day &middot; Sherwood Celtic Music Festival</title>
+  {:else}
+    <meta property="og:title" content="Faire Day: Faire and Festival Weather">
+    <title>Faire Day: Faire and Festival Weather</title>
+  {/if}
   <script defer data-domain="faireday.com" src="https://plausible.io/js/plausible.js"></script>
 </svelte:head>
 
