@@ -68,13 +68,20 @@
     <p class="error">We hope you enjoyed the latest Faire Day preview!</p>
     <p class="error">Download Faire Day below to see more faire and festival weather, and check back soon for another event!</p>
   {/if}
-  <section>
+  <section class="about">
     <Banner title="Faire Day" />
-    <p class="hero">Whether you're planning out a season's worth of garb or just deciding whether to wear that extra coin belt on the day, Faire Day is your source for updated weather conditions and details of your favorite festivals!</p>
+    <p>
+      Whether you're planning out a season's worth of garb or just deciding whether to wear that extra coin belt on the day, Faire Day is your source for updated weather conditions and details of your favorite festivals!<br>
+      <a href="https://faireday.com">Learn more »</a>
+    </p>
+    <p>
+      Want to help shape Faire Day’s future?<br>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfP_6dIuB05QNiYGyXmrOfyQyPPfv8jTcFTZWbrQbQDTiot7w/viewform?fbclid=IwAR1jOHOWRA9r-3uRO7WTJkm2kEiInt_fKAdUwHl39LSew7No0n6fk1YxjPw" target="_blank" rel="noopener noreferrer">Take our survey »</a>
+    </p>
   </section>
 </main>
 <footer>
-  <a class="app-store" href="https://apple.co/3fDEqho">Download on the App Store</a>
+  <a class="app-store" href="https://apple.co/3fDEqho" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
   {#if data?.weather?.forecastDaily?.metadata.attributionURL}
     <Attribution url={data.weather.forecastDaily.metadata.attributionURL} />
   {/if}
@@ -117,15 +124,15 @@
   p {
     font-size: 1.6rem;
   }
-  
-  p.hero {
-    background: bottom center / 20rem 20rem no-repeat url('/app.png');
-    border-bottom: 0.5px solid var(--foreground-tertiary);
-    margin-bottom: -4rem;
-    padding-bottom: 22rem;
+
+  .about p {
     text-align: center;
     width: 25rem;
   }
+
+    .about p + p {
+      margin-top: 2rem;
+    }
   
   p.error {
     margin: 0 auto;
@@ -144,18 +151,31 @@
   
   footer {
     align-items: center;
+    background: top center / 20rem 20rem no-repeat url('/app.png');
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 2rem;
+    justify-content: center;
     margin-top: 2rem;
+    padding-top: 18rem;
+    position: relative;
   }
   
+    footer::after {
+      border-bottom: 0.5px solid var(--foreground-tertiary);
+      content: '';
+      display: block;
+      position: absolute;
+      top: 20rem;
+      width: 25rem;
+    }
+
   .app-store {
     background-image: url('/app-store.svg');
     background-size: cover;
     font: 0 / 0 a;
     height: 4.0rem;
     width: 12.0rem;
+    z-index: 1;
   }
 </style>
