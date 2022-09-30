@@ -6,6 +6,7 @@
 
 :root {
   --accent: #8256b8;
+  --accent-hc: #d3abff;
   --background: #333;
   --foreground: #fff;
   --foreground-secondary: #999;
@@ -19,4 +20,8 @@
 
 body {
   font-family: 'Alegreya', serif;
+}
+
+a {
+  color: var(--accent-hc);
 }
