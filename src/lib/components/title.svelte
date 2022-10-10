@@ -29,7 +29,7 @@
     width: 100%;
     z-index: 1;
   }
-  
+
     nav::after {
       background: url('/crenellation.png');
       background-position: top center;
@@ -40,23 +40,23 @@
       top: 100%;
       width: 100%;
     }
-  
+
   span {
     display: block;
     text-align: center;
   }
-  
+
     span.subtitle {
       font-size: 1.4rem;
       font-weight: 500;
       opacity: 0.5;
     }
-    
+
     span.title {
       font-size: 2rem;
       font-weight: 500;
     }
-  
+
   .subtitle {
     font-family: 'Alegreya SC';
     text-transform: lowercase;

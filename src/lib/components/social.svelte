@@ -26,7 +26,7 @@
     display: flex;
     opacity: 0.65;
   }
-  
+
   div a {
     background-position: center center;
     background-repeat: no-repeat;

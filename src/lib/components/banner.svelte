@@ -21,7 +21,7 @@
     text-transform: uppercase;
     width: 25rem;
   }
-  
+
   h1::before,
   h1::after {
     border-color: var(--accent);
@@ -33,12 +33,12 @@
     position: absolute;
     width: 0;
   }
-  
+
   h1::before {
     border-left-color: transparent;
     left: -1rem;
   }
-  
+
   h1::after {
     border-right-color: transparent;
     right: -1rem;

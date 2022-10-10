@@ -6,10 +6,10 @@
   export let title
   export let model
   export let isDay = false
-  
+
   $: condition = humanizeConditionCode(model.conditionCode, isDay)
   $: wind = `${Math.round(model.windSpeed)}mph`
-  
+
   function formatPercentage(decimal) {
     return `${Math.round(decimal * 100)}%`
   }
@@ -32,12 +32,12 @@
   div {
     padding: 1rem 2rem;
   }
-  
+
   dl {
     display: grid;
     grid-gap: 1rem;
   }
-  
+
   dt {
     font-family: 'Alegreya';
     font-size: 1.4rem;
@@ -46,7 +46,7 @@
     text-align: center;
     text-transform: uppercase;
   }
-  
+
   dd {
     align-items: center;
     display: flex;

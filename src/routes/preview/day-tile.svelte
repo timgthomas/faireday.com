@@ -5,7 +5,7 @@
 
   export let title
   export let model
-  
+
   $: condition = humanizeConditionCode(model.conditionCode, true)
 </script>
 
@@ -26,12 +26,12 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
   }
-  
+
   .max {
     font-size: 2.2rem;
     margin-top: 0.5rem;
   }
-  
+
   .min {
     color: var(--foreground-secondary);
     font-size: 2rem;

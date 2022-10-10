@@ -34,7 +34,7 @@
     text-transform: lowercase;
     width: 6rem;
   }
-  
+
   span {
     font: 0 / 0 a;
   }

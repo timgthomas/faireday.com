@@ -1,7 +1,7 @@
 <script>
   export let icon
   export let group = ''
-  
+
   $: path = () => {
     const pathSegments = [group, icon].filter(Boolean)
     return `/${pathSegments.join('/')}.png`

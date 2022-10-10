@@ -1,7 +1,6 @@
 <script>
   import { DateTime } from 'luxon'
   import Banner from '$lib/components/banner.svelte'
-  import Icon from '$lib/components/icon.svelte'
   import Title from '$lib/components/title.svelte'
   import formatTemperature from '$lib/utils/format-temperature'
   import Attribute from './attribute.svelte'
@@ -10,12 +9,12 @@
   import DayTile from './day-tile.svelte'
 
   export let data
-  
+
   $: isActive = !!data.weather?.forecastDaily
-  
+
   function formatDayOfTheWeek(isoDateTime, format) {
     return DateTime
-      .fromISO(isoDateTime)
+      .fromISO(isoDateTime) // TODO: Include TZ here
       .setZone('America/Chicago') // TODO: Pull from faire
       .toFormat(format)
   }
@@ -95,16 +94,16 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .weekend {
     display: flex;
     justify-content: center;
   }
-  
+
     .weekend li {
       padding: 1rem 1.5rem;
     }
-    
+
     .weekend li:not(:first-of-type) {
       border-left: 0.5px solid var(--foreground-tertiary);
     }
@@ -120,7 +119,7 @@
   dl :global(> div:not(:first-of-type)) {
     border-left: 0.5px solid var(--foreground-tertiary);
   }
-  
+
   p {
     font-size: 1.6rem;
   }
@@ -133,22 +132,22 @@
     .about p + p {
       margin-top: 2rem;
     }
-  
+
   p.error {
     margin: 0 auto;
     padding-top: 2rem;
     text-align: center;
     width: 25rem;
   }
-  
+
     p.error:first-of-type {
       margin-top: 5rem;
     }
-  
+
     p.error:last-of-type {
       margin-bottom: 5rem;
     }
-  
+
   footer {
     align-items: center;
     background: top center / 20rem 20rem no-repeat url('/app.png');
@@ -160,7 +159,7 @@
     padding-top: 18rem;
     position: relative;
   }
-  
+
     footer::after {
       border-bottom: 0.5px solid var(--foreground-tertiary);
       content: '';

@@ -21,7 +21,7 @@
     font-size: 1.4rem;
     font-weight: 500;
   }
-  
+
   dd {
     font-size: 2.2rem;
   }
