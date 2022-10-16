@@ -108,6 +108,13 @@
       border-left: 0.5px solid var(--foreground-tertiary);
     }
 
+  @media screen and (min-width: 641px) {
+    .daily {
+      flex-direction: row;
+      gap: 6rem;
+    }
+  }
+
   .daily li {
     width: 100%;
   }
