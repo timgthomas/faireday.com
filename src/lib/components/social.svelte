@@ -6,9 +6,6 @@
   <a class="facebook" href="https://fb.me/faireday" target="_blank" rel="noopener noreferrer">
     Like Faire Day on Facebook
   </a>
-  <a class="twitter" href="https://twitter.com/faireday" target="_blank" rel="noopener noreferrer">
-    Follow Faire Day on Twitter
-  </a>
   <a class="discord" href="https://discord.gg/zNWpHHGnhw" target="_blank" rel="noopener noreferrer">
     Join the Faire Day server on Discord
   </a>
