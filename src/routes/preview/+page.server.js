@@ -3,7 +3,7 @@ const baseUrl = 'https://faireday-api.vercel.app/api/v3'
 const faire = 'trf'
 const weekend = 'trf-2022-7'
 const title = 'TRF’s Highland Fling'
-const previewEnabled = true
+const previewEnabled = false
 
 export async function load() {
   if (!previewEnabled) return {}
