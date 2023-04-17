@@ -1,8 +1,8 @@
 const baseUrl = 'https://faireday-api.vercel.app/api/v3'
 // const baseUrl = 'http://localhost:3000/api/v3'
 const faire = 'sherwood'
-const weekend = 'sherwood-2023-7'
-const title = 'Sherwood Weekend VII'
+const weekend = 'sherwood-2023-8'
+const title = 'Sherwood’s Closing Weekend'
 const previewEnabled = true
 
 export async function load() {
